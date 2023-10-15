@@ -42,7 +42,9 @@
     ></script>
 
     <script>
-      const socket = io("http://localhost:8080");
+      const socket = io(
+        "https://react-socket-server-vg-1df578f5f45d.herokuapp.com/"
+      );
 
       // html references
       const formulario = document.querySelector("#miFormulario");
@@ -62,13 +64,6 @@
       socket.on("mensaje-from-server", (data) => {
         mensajes.innerHTML += `<li>${data.texto}</li>`;
       });
-
-      // setTimeout(() => {
-      //   socket.emit("mensaje-cliente", {
-      //     msg: "Cliente",
-      //     nombre: "Victor",
-      //   });
-      // }, 2000);
     </script>
   </body>
 </html>
